@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Component</title>
+</head>
+<body>
+  <h1>Data from API</h1>
+
+  <div class="card">
+  <h1>cycles</h1>
+  <button (click)="toggleDataVisibility()">show cycles</button>
+
+  <ul *ngIf="showData">
+    <li *ngFor="let item of newData">
+      <p>Cycle ID: {{ item.cycleId }}</p>
+      <p>Cycle Name: {{ item.cycleName }}</p>
+      <p>Stock: {{ item.stock }}</p>
+      <button (click)="borrowCycle(item.cycleId)">Borrow</button>
+    </li>
+  </ul>
+</div>
+
+
+
+  <div class="card">
+    <h1>Borrowed Cycles</h1>
+    
+     <button (click)="toggleBorrowedCyclesVisibility()">Show Borrowed Cycles</button> 
+    
+
+    <ul *ngIf="showBorrowedData">
+      <li *ngFor="let item of borrowedCycles">
+        <p>Cycle ID: {{ item.borrowedCycleId }}</p>
+        <p>Cycle Name: {{ item.cycleName }}</p>
+        <p>stock: {{ item.stock }}</p>
+        <button (click)="returnCycle(item.borrowedCycleId)">return</button>
+      </li>
+    </ul>
+  </div>
+  
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="cycleName">Cycle Name</label>
+      <input type="text" class="form-control" id="cycleName" [(ngModel)]="newCycle.cycleName" name="cycleName" required>
+    </div>
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <input type="number" class="form-control" id="stock" [(ngModel)]="newCycle.stock" name="stock" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Cycle</button>
+  </form>
+  
+
+</body>
+</html>
