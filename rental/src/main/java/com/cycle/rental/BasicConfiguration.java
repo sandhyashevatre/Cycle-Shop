@@ -55,6 +55,9 @@ public class BasicConfiguration {
         auth.userDetailsService(userDetailsService);
     }
 
+    @Autowired
+    private CorsConfig corsConfig;
+
     @Bean
     public UserDetailsService userDetailsService() {
         return userDetailsService;
@@ -66,8 +69,9 @@ public class BasicConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
             .csrf(csrf -> csrf.disable())
+            .cors(cors -> cors.configurationSource(corsConfig))
             .authorizeHttpRequests((requests) -> requests
-            .requestMatchers("/register", "/api/auth/token","/v2/api-docs","/add.html","/api/cycles/**","/api/cycles/add").permitAll()
+            .requestMatchers("/register", "/api/auth/token","/v2/api-docs","/add.html").permitAll()
             // .requestMatchers("/api/cycles/add").hasRole("ADMIN")
             .anyRequest().authenticated())
             .logout(withDefaults())

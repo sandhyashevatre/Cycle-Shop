@@ -1,16 +1,43 @@
 package com.cycle.rental;
 
+ 
+
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import org.springframework.lang.Nullable;
+
+import org.springframework.web.cors.CorsConfiguration;
+
+import org.springframework.web.cors.CorsConfigurationSource;
+
+ 
+
+import jakarta.servlet.http.HttpServletRequest;
+
+ 
 
 @Configuration
-public class CorsConfig implements WebMvcConfigurer {
+
+public class CorsConfig implements CorsConfigurationSource {
+
+ 
+
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**") // Replace with the actual URL pattern of your API
-            .allowedOrigins("http://localhost:4200") // Allow requests from your Angular app's origin
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-            .allowedHeaders("*");
+
+    @Nullable
+
+    public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
+
+        CorsConfiguration config = new CorsConfiguration();
+
+        config.addAllowedOrigin("*");
+
+        config.addAllowedMethod("*");
+
+        config.addAllowedHeader("*");
+
+        return config;
+
     }
+
 }

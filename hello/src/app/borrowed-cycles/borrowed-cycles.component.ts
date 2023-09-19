@@ -10,7 +10,7 @@ import { CycleService } from '../app.service';
 })
 export class BorrowedCyclesComponent {
   cycles: any;
-  showBorrowedCycles: boolean = false;
+  showBorrowedCycles: boolean = true;
   constructor(private cycleService: CycleService){}
 
   ngOnInit() {

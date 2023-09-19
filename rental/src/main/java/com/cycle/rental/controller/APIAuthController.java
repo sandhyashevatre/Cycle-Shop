@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
  
 
 import com.cycle.rental.business.LoginBody;
+import com.cycle.rental.dto.TokenDTO;
 
  
 
@@ -60,7 +61,7 @@ public class APIAuthController {
 
     @PostMapping("/token")
 
-    public String token(@RequestBody LoginBody loginBody) {
+    public TokenDTO token(@RequestBody LoginBody loginBody) {
 
         Instant now = Instant.now();
 
@@ -95,9 +96,10 @@ public class APIAuthController {
         .build();
 
  
+        TokenDTO token = new TokenDTO();
+        token.setToken(this.jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue());
 
-        return this.jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
-
+        return token;
     }
 
  

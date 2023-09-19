@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CyclesComponent } from './cycles/cycles.component';
 import { BorrowedCyclesComponent } from './borrowed-cycles/borrowed-cycles.component';
-import { AddCyclesComponent } from './add-cycles/add-cycles.component'; // Import FormsModule
+import { AddCyclesComponent } from './add-cycles/add-cycles.component';
+import { LoginFormComponent } from './login-form/login-form.component'; // Import FormsModule
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AddCyclesComponent } from './add-cycles/add-cycles.component'; // Impor
     AppComponent,
     CyclesComponent,
     BorrowedCyclesComponent,
-    AddCyclesComponent
+    AddCyclesComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

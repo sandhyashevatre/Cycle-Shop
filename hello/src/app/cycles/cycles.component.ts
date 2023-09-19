@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CycleService } from '../app.service';
 
 
-
 @Component({
   selector: 'app-cycles',
   templateUrl: './cycles.component.html',
@@ -11,7 +10,7 @@ import { CycleService } from '../app.service';
 export class CyclesComponent {
   // cycleService: any;
   cycles: any;
-  showCycles: boolean = false;
+  showCycles: boolean = true;
   constructor( private cycleService :CycleService){}
 
   ngOnInit() {

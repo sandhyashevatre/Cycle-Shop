@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { CyclesComponent } from './cycles/cycles.component';
 import { BorrowedCyclesComponent } from './borrowed-cycles/borrowed-cycles.component';
 import { AddCyclesComponent } from './add-cycles/add-cycles.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 const routes: Routes = [
   // { path: '', component: AppComponent }, // Default route (you can change this)
   { path: 'cycles', component: CyclesComponent },
   { path: 'cart', component: BorrowedCyclesComponent },
+  {path: 'login', component: LoginFormComponent},
   {path : '', redirectTo: '/cycles', pathMatch: 'full'},
   {path : 'AddCyclesComponent', component: AddCyclesComponent}
 ];
