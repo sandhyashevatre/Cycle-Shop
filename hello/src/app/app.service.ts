@@ -36,9 +36,8 @@ returnCycles(cycleId: number)
 }
 
 addCycle(newCycle: any): Observable<any> {
-  const apiUrl = 'http://localhost:8080/api/cycles/add'; // Define the API URL for adding a cycle
+  const apiUrl = 'http://localhost:8080/api/cycles/add'; 
 
-  // Send a POST request to the API with the newCycle data
   return this._http.put(apiUrl, newCycle);
 }
 

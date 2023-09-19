@@ -4,12 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { CyclesComponent } from './cycles/cycles.component';
+import { BorrowedCyclesComponent } from './borrowed-cycles/borrowed-cycles.component';
+import { AddCyclesComponent } from './add-cycles/add-cycles.component'; // Import FormsModule
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CyclesComponent,
+    BorrowedCyclesComponent,
+    AddCyclesComponent
   ],
   imports: [
     BrowserModule,
