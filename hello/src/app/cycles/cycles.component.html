@@ -16,6 +16,7 @@
               <th>Cycle ID</th>
               <th>Cycle Name</th>
               <th>Stock</th>
+              <th>Price</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -24,6 +25,7 @@
               <td>{{ item.cycleId }}</td>
               <td>{{ item.cycleName }}</td>
               <td>{{ item.stock }}</td>
+              <td>{{ item.price }} Rs</td>
               <td><button (click)="borrowCycle(item.cycleId)">Add to cart</button></td>
             </tr>
           </tbody>

@@ -15,5 +15,6 @@ public class BorrowedCycles {
     
     private int stock;
     private String cycleName;
+    private int price;
 
 }

@@ -78,7 +78,9 @@ public class CyclesController  {
                     borrowedEntity.setBorrowedCycleId(borrowedCycle.getCycleId());
                     borrowedEntity.setCycleName(borrowedCycle.getCycleName());
                     borrowedEntity.setStock(borrowedEntity.getStock() + 1);
+                    borrowedEntity.setPrice(borrowedCycle.getPrice());
                     borrowedCycle.setStock(borrowedCycle.getStock() - 1);
+                    
                     return borrowedCyclesRepository.save(borrowedEntity);
                 }
             }

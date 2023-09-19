@@ -20,6 +20,7 @@ public class Cycles {
     private int stock;
     private String cycleName;
     private int numBorrowed;
+    private int price;
     public  int getNumAvailable() {
         return stock - numBorrowed;
     }
